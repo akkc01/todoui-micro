@@ -21,8 +21,8 @@ jobs:
 
       - name: Build & push Image
         run: |
-          docker build -t akkc01/todouiMicro:${{ github.sha }} .
-          docker push akkc01/todouiMicro:${{ github.sha }}
+          docker build -t akkc01/todouimicro:${{ github.sha }} .
+          docker push akkc01/todouimicro:${{ github.sha }}
 
 
       # # ye code Image ke tag ko change kar rha meri manifest repo me.
