@@ -5,10 +5,6 @@ import { Delete } from '@mui/icons-material';
 import { Box } from '@mui/material';
 import config from './config'; // Import the config file with environment variable support
 
-// Use the config to define API URLs
-// const GET_TASKS_API_BASE_URL = config.GET_TASKS_API_BASE_URL;
-// const DELETE_TASK_API_BASE_URL = config.DELETE_TASK_API_BASE_URL;
-// const CREATE_TASK_API_BASE_URL = config.CREATE_TASK_API_BASE_URL;
 
 // For simplicity, we can directly use environment variables here as well
 // const GET_TASKS_API_BASE_URL = process.env.REACT_APP_GET_TASKS_API_BASE_URL;
@@ -16,9 +12,16 @@ import config from './config'; // Import the config file with environment variab
 // const CREATE_TASK_API_BASE_URL = process.env.REACT_APP_CREATE_TASK_API_BASE_URL;
 
 
-const GET_TASKS_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-const DELETE_TASK_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
-const CREATE_TASK_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+// const GET_TASKS_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+// const DELETE_TASK_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+// const CREATE_TASK_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+const GET_TASKS_API_BASE_URL = `${BASE_URL}/api/get`;
+const CREATE_TASK_API_BASE_URL = `${BASE_URL}/api/create`;
+const DELETE_TASK_API_BASE_URL = `${BASE_URL}/api/delete`;
+
 
 //Update Task Functionality is Work In Progress
 // const UPDATE_TASK_API_BASE_URL = '';
