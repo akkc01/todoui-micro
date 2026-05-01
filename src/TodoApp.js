@@ -15,7 +15,10 @@ import config from './config'; // Import the config file with environment variab
 // const DELETE_TASK_API_BASE_URL = process.env.REACT_APP_DELETE_TASK_API_BASE_URL;
 // const CREATE_TASK_API_BASE_URL = process.env.REACT_APP_CREATE_TASK_API_BASE_URL;
 
-//const BASE_URL = process.env.REACT_APP_API_BASE_URL;
+
+const GET_TASKS_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const DELETE_TASK_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const CREATE_TASK_API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 //Update Task Functionality is Work In Progress
 // const UPDATE_TASK_API_BASE_URL = '';
@@ -28,8 +31,7 @@ function TodoApp() {
 
     const fetchTasks = async () => {
         try {
-            //const response = await axios.get(`${GET_TASKS_API_BASE_URL}/tasks`);
-            const response = await axios.get(`/api/get/tasks`);
+            const response = await axios.get(`${GET_TASKS_API_BASE_URL}/tasks`);
             setTasks(response.data);
         } catch (error) {
             console.error('Error fetching tasks', error);
@@ -38,8 +40,7 @@ function TodoApp() {
 
     const createTask = async () => {
         try {
-            //await axios.post(`${CREATE_TASK_API_BASE_URL}/tasks`, newTask);
-            await axios.post(`/api/create/tasks`, newTask);
+            await axios.post(`${CREATE_TASK_API_BASE_URL}/tasks`, newTask);
             fetchTasks();
             setNewTask({ title: '', description: '' });
         } catch (error) {
@@ -49,8 +50,7 @@ function TodoApp() {
 
     const deleteTask = async (taskId) => {
         try {
-            //await axios.delete(`${DELETE_TASK_API_BASE_URL}/tasks/${taskId}`);
-            await axios.delete(`/api/delete/tasks/${taskId}`);
+            await axios.delete(`${DELETE_TASK_API_BASE_URL}/tasks/${taskId}`);
             fetchTasks();
         } catch (error) {
             console.error('Error deleting task', error);
